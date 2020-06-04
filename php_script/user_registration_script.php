@@ -37,13 +37,13 @@
 		if(isset($username) && isset($password) && isset($role)){
 			$insert = $users->insertOne(
 		    [	'username' => $username,
-		    	'password' => $password,
+		    	'password' => md5($password),
 		    	'role' => $role
 		    ]	);
 			if(isset($insert)){
-				echo "<code>";
-			    var_dump($insert);
-				echo "</code>";
+				echo "<script>";
+			    echo "alert('admin created successfully');";
+				echo "</script>";
 
 			}
 
